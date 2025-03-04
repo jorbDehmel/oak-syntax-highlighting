@@ -1,0 +1,26 @@
+{
+  "name": "oak-language",
+  "displayName": "Oak Syntax Highlighting",
+  "description": "VSCode language support for Oak",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "oak",
+      "aliases": ["oak", "oak"],
+      "extensions": [".oak"],
+      "configuration": "./language-configuration.json",
+      "icon": {"dark": "logo.png", "light": "logo.png"}
+    }],
+    "grammars": [{
+      "language": "oak",
+      "scopeName": "source.oak",
+      "path": "./syntaxes/oak.tmLanguage.json"
+    }]
+  }
+}

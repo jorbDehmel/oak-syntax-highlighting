@@ -1,0 +1,105 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "oak",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#singleStrings"
+		},
+		{
+			"include": "#doubleStrings"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#blockComments"
+		},
+		{
+			"include": "#lineComments"
+		},
+		{
+			"include": "macros"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.oak",
+				"match": "\\b(if|else|while|match|case|return)\\b"
+			}, {
+				"name": "keyword.other.oak",
+				"match": "\\b(let|true|false)\\b"
+			}, {
+				"name": "keyword.operator.namespace.oak",
+				"match": "::"
+			}]
+		},
+		"storage": {
+			"patterns": [{
+				"name": "storage.type.oak",
+				"match": "\\b(struct|enum|int|uint|float|bool|f(32|64|128)|[ui](8|16|32|64|128))\\b"
+			}, {
+				"name": "entity.name.class.oak",
+				"match": "([A-Z][a-z]*)+"
+			}, {
+				"name": "entity.name.function",
+				"match": "[a-z_]+"
+			}, {
+				"name": "variable.name.oak",
+				"match": "[a-z_][a-z0-9_]*"
+			}]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.numeric.oak",
+				"match": "[0-9\\.][^ ]*"
+			}]
+		},
+		"macros": {
+			"patterns": [{
+				"name": "constant.other.oak",
+				"match": "[a-zA-Z0-9_:]+!"
+			}]
+		},
+		"singleStrings": {
+			"name": "string.quoted.single.oak",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.oak",
+					"match": "\\\\."
+				}
+			]
+		},
+		"doubleStrings": {
+			"name": "string.quoted.double.oak",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.oak",
+					"match": "\\\\."
+				}
+			]
+		},
+		"blockComments": {
+			"name": "comment.block.oak",
+			"begin": "/\\*",
+			"end": "\\*/"
+		},
+		"lineComments": {
+			"patterns": [{
+				"name": "comment.line.double-slash.oak",
+				"match": "//.*"
+			}]
+		}
+	},
+	"scopeName": "source.oak"
+}
