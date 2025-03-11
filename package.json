@@ -3,6 +3,7 @@
   "displayName": "Oak Syntax Highlighting",
   "description": "VSCode language support for Oak",
   "version": "0.0.1",
+  "icon": "logo.png",
   "engines": {
     "vscode": "^1.97.0"
   },

@@ -25,90 +25,100 @@
 		},
 		{
 			"include": "#poundComments"
-		},
-		{
-			"include": "doxygen"
-		},
-		{
-			"include": "macros"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.oak",
-				"match": "\\b(if|else|while|match|case|return)\\b"
-			}, {
-				"name": "keyword.other.oak",
-				"match": "\\b(let|true|false|pre|post|_)\\b"
-			}]
-		},
-		"storage": {
-			"patterns": [{
-				"name": "storage.type.oak",
-				"match": "\\b(struct|enum|int|uint|float|bool|void|f(32|64|128)|[ui](8|16|32|64|128))\\b"
-			}, {
-				"name": "entity.name.class.oak",
-				"match": "(?!=[a-zA-Z0-9_])([A-Z][a-z]*)+"
-			}, {
-				"name": "entity.name.function",
-				"match": "(?!=[a-zA-Z0-9_])[a-z_]+!?"
-			}, {
-				"name": "variable.name.oak",
-				"match": "(?=let [a-z_, ]*)[a-z_][a-z0-9_]*"
-			}]
-		},
-		"constants": {
-			"patterns": [{
-				"name": "constant.numeric.oak",
-				"match": "(?!=[a-zA-Z_])[0-9\\.][^ ]*"
-			}]
-		},
-		"singleStrings": {
-			"name": "string.quoted.single.oak",
-			"begin": "'",
-			"end": "'",
+		"blockComments": {
+			"begin": "/\\*",
+			"end": "\\*/",
+			"name": "comment.block.oak",
 			"patterns": [
 				{
-					"name": "constant.character.escape.oak",
-					"match": "\\\\."
+					"match": "\\@\\w+",
+					"name": "keyword.other.doxygen.oak"
+				},
+				{
+					"include": "#blockComments"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"match": "\\b[0-9\\.]\\w*\\b",
+					"name": "constant.numeric.oak"
 				}
 			]
 		},
 		"doubleStrings": {
-			"name": "string.quoted.double.oak",
 			"begin": "\"",
 			"end": "\"",
+			"name": "string.quoted.double.oak",
 			"patterns": [
 				{
-					"name": "constant.character.escape.oak",
-					"match": "\\\\."
+					"match": "\\\\.",
+					"name": "constant.character.escape.oak"
 				}
 			]
 		},
-		"blockComments": {
-			"name": "comment.block.oak",
-			"begin": "/\\*",
-			"end": "\\*/"
+		"keywords": {
+			"patterns": [
+				{
+					"match": "\\b(if|else|while|match|case|return)\\b",
+					"name": "keyword.control.oak"
+				},
+				{
+					"match": "\\b(let|true|false|pre|post|_|self)\\b",
+					"name": "keyword.other.oak"
+				}
+			]
 		},
 		"lineComments": {
-			"patterns": [{
-				"name": "comment.line.double-slash.oak",
-				"match": "//.*"
-			}]
-		},
-		"doxygen": {
-			"patterns": [{
-				"name": "meta.type.annotation",
-				"match": "@[a-zA-Z0-9_]+"
-			}
+			"patterns": [
+				{
+					"match": "//.*",
+					"name": "comment.line.double-slash.oak"
+				}
 			]
 		},
 		"poundComments": {
-			"patterns": [{
-				"name": "comment.line.number-sign.oak",
-				"match": "#.*"
-			}]
+			"patterns": [
+				{
+					"match": "#.*",
+					"name": "comment.line.number-sign.oak"
+				}
+			]
+		},
+		"singleStrings": {
+			"begin": "'",
+			"end": "'",
+			"name": "string.quoted.single.oak",
+			"patterns": [
+				{
+					"match": "\\\\.",
+					"name": "constant.character.escape.oak"
+				}
+			]
+		},
+		"storage": {
+			"patterns": [
+				{
+					"match": "\\b(struct|enum|u?int|float|bool|void|f(32|64|128)|[ui](8|16|32|64|128))\\b",
+					"name": "storage.type.oak"
+				},
+				{
+					"match": "\\b(\\w+::)*([A-Z][a-z]*)+\\b",
+					"name": "entity.name.class.oak"
+				},
+				{
+					"match": "\\b(\\w+::)*[a-z_][a-z0-9_]*!?(?=(\\())",
+					"name": "entity.name.function"
+				},
+				{
+					"match": "\\b(\\w+::)*[a-z_][a-z0-9_]*(\\.)?\\b",
+					"name": "variable.name.oak"
+				}
+			]
 		}
 	},
 	"scopeName": "source.oak"
