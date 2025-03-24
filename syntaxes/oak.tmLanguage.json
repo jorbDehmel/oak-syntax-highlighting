@@ -38,6 +38,10 @@
 					"name": "keyword.other.doxygen.oak"
 				},
 				{
+					"match": "TODO|NOTE",
+					"name": "keyword.other.doxygen.oak"
+				},
+				{
 					"include": "#blockComments"
 				}
 			]
