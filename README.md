@@ -7,8 +7,6 @@ Jordan Dehmel, 2025, MIT license
 
 ## Features
 
-## Release Notes
-
-### 0.0.1
-
-Initial release
+- Syntax highlighting
+- Autocompletion for paired symbols (e.g. brackets)
+- Doxygen support
