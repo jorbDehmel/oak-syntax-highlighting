@@ -1,8 +1,4 @@
 {
-    "indentationRules": {
-        "increaseIndentPattern": "{",
-        "decreaseIndentPattern": "}"
-    },
     "comments": {
         "lineComment": "//",
         "blockComment": [ "/*", "*/" ]
