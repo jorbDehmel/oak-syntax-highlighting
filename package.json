@@ -1,11 +1,12 @@
 {
   "name": "oak-language",
-  "displayName": "Oak Syntax Highlighting",
+  "displayName": "Oak Programming Language Syntax Highlighter",
   "description": "VSCode language support for Oak",
   "repository": {
     "type": "git",
     "url": "https://github.com/jorbDehmel/oak-syntax-highlighting.git"
   },
+  "publisher": "jdehmel",
   "version": "0.0.1",
   "icon": "logo.png",
   "engines": {
