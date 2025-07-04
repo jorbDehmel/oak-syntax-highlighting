@@ -115,7 +115,7 @@
 					"name": "entity.name.class.oak"
 				},
 				{
-					"match": "[a-z_][a-z0-9_]*!?(?=\\(|<)",
+					"match": "[a-z_][a-z0-9_]*(!|!?(?=\\(|<))",
 					"name": "entity.name.function"
 				},
 				{
